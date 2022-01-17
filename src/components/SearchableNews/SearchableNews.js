@@ -2,7 +2,7 @@ import React from "react";
 import SearchForm from "../SearchForm/SearchForm";
 import SingleNews from "../SingleNews/SingleNews";
 
-function NewsSection({ articles }) {
+function SearchableNews({ articles }) {
   return (
     <div className="articles__container">
       <section className="articles__section content">
@@ -14,4 +14,4 @@ function NewsSection({ articles }) {
   );
 }
 
-export default NewsSection;
+export default SearchableNews;

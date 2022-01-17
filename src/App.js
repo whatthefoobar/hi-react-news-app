@@ -1,8 +1,10 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
-import NewsSection from "./components/NewsSection/NewsSection";
+import SearchableNews from "./components/SearchableNews/SearchableNews";
 import SearchForm from "./components/SearchForm/SearchForm";
 import Footer from "./components/Footer/Footer";
+import MainArticles from "./components/MainArticles/MainArticles";
+import Header from "./components/Header/Header";
 
 const App = () => {
   const [articles, setArticles] = useState([]);
@@ -37,8 +39,7 @@ const App = () => {
         );
         const data = await res.json();
         const topArticles = data.results;
-        console.log(topArticles);
-        // console.log(articles);
+        // console.log(topArticles);
         setTopArticles(topArticles);
         setIsLoading(false);
       } catch (error) {
@@ -46,63 +47,41 @@ const App = () => {
       }
     };
     fetchTopArticles();
-  }, []);
-
-  // console.log(topArticles);
-  // console.log("title", topArticles[0].title);
-  // console.log("parag", topArticles[0].abstract);
-  // console.log("img link", topArticles[0].multimedia[0].url);
-  // console.log("id", topArticles[0].uri);
-  // console.log("story url", topArticles[0].url);
+  }, [section]);
 
   return (
     <>
-      <div className="header__img">
-        <div className="overlay">Get your daily news fix here</div>
-      </div>
+      <Header />
 
       <div className="articles__container">
         <div className="main-articles__container">
-          <h2 className="main-articles__header">Top news</h2>
-          <section className="main-articles__list">
-            {topArticles.map((topArticle) => {
-              return (
-                <article className="main-article" key={topArticle.uri}>
-                  <img
-                    src={topArticle.multimedia[0].url}
-                    alt="top news article"
-                  />
-                  <h2>{topArticle.title}</h2>
-                  <p>{topArticle.abstract}</p>
-                  <p>{topArticle.byline}</p>
-                  <a
-                    href={topArticle.url}
-                    target="_blank"
-                    className="list__link"
-                  >
-                    read more
-                  </a>
-                </article>
-              );
-            })}
-          </section>
+          <SearchForm
+            className="main-articles__search"
+            searchText={(text) => {
+              setSection(text); // prop function we declared here that we export to SearchForm
+            }}
+          />
+          <h1 className="main-articles__intro">
+            Viewing top stories about {section}
+          </h1>
+
+          <MainArticles topArticles={topArticles} />
         </div>
         <section className="searchable-articles">
-          <div className="searchable-articles__search">
-            <SearchForm
-              searchText={(text) => {
-                setTerm(text); // prop function we declared here that we export to SearchForm
-              }}
-            />
-            <h1 className="searchable-articles__intro">
-              Viewing articles about {term}
-            </h1>
-          </div>
+          <SearchForm
+            className="searchable-articles__search"
+            searchText={(text) => {
+              setTerm(text); // prop function we declared here that we export to SearchForm
+            }}
+          />
+          <h1 className="searchable-articles__intro">
+            Viewing articles about {term}
+          </h1>
 
           {isLoading ? ( // if is not loading render this section
             <h1 className="loading"> Loading...</h1>
           ) : (
-            <NewsSection
+            <SearchableNews
               articles={articles}
               searchText={(text) => {
                 setTerm(text); // prop function we declared here that we export to SearchForm
@@ -110,31 +89,11 @@ const App = () => {
             />
           )}
         </section>
-        {/* footer here */}
-        <Footer />
       </div>
+
+      <Footer />
     </>
   );
 };
 
 export default App;
-
-{
-  /* <section className="articles__most-popular-news">
-            <h4>Most popular news</h4>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla modi
-            excepturi non, commodi corrupti saepe voluptates hic quidem
-            aspernatur quae obcaecati enim! Nulla quibusdam totam consequatur
-            pariatur amet! Sed qui nihil ad non, perspiciatis est voluptatem
-            aperiam quisquam repudiandae delectus placeat facilis molestias
-            minima corporis accusantium eveniet expedita, assumenda soluta quia
-            et dolorum ea ut totam at! Voluptates expedita numquam, dolor
-            soluta, magnam architecto, nam distinctio facilis ut iste commodi a
-            corrupti ipsam debitis quisquam. Quia nulla nesciunt velit inventore
-            repudiandae? Voluptate cupiditate explicabo quam, eligendi minima
-            qui ipsam quidem neque laudantium sed ullam ratione possimus aut
-            aperiam, quia vitae, voluptates dolore repellat tempore eos at
-            nesciunt? Beatae quod culpa nihil ducimus inventore quas. Quam
-            nostrum corporis odio voluptates sunt!
-          </section> */
-}

@@ -1,7 +1,8 @@
 import React from "react";
 
 const Footer = () => {
-  return <div>Footer</div>;
+  const today = new Date();
+  return <div className="footer">Copyright &copy;{today.getFullYear()}</div>;
 };
 
 export default Footer;

@@ -9,7 +9,7 @@ const SearchForm = ({ searchText }) => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form className="searchForm" conSubmit={handleSubmit}>
         <input
           type="text"
           placeholder="e.g. politics"
