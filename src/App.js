@@ -5,12 +5,13 @@ import SearchForm from "./components/SearchForm/SearchForm";
 import Footer from "./components/Footer/Footer";
 import MainArticles from "./components/MainArticles/MainArticles";
 import Header from "./components/Header/Header";
+import OptionSearchForm from "./components/OptionSearchForm/OptionSearchForm";
 
 const App = () => {
   const [articles, setArticles] = useState([]);
   const [term, setTerm] = useState("everything");
   const [isLoading, setIsLoading] = useState("true");
-  const [section, setSection] = useState("arts");
+  const [section, setSection] = useState("books");
   const [topArticles, setTopArticles] = useState([]);
 
   useEffect(() => {
@@ -39,7 +40,7 @@ const App = () => {
         );
         const data = await res.json();
         const topArticles = data.results;
-        // console.log(topArticles);
+        console.log(topArticles);
         setTopArticles(topArticles);
         setIsLoading(false);
       } catch (error) {
@@ -55,7 +56,7 @@ const App = () => {
 
       <div className="articles__container">
         <div className="main-articles__container">
-          <SearchForm
+          <OptionSearchForm
             className="main-articles__search"
             searchText={(text) => {
               setSection(text); // prop function we declared here that we export to SearchForm
