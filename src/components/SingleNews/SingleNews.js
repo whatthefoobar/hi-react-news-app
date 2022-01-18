@@ -5,7 +5,7 @@ import React from "react";
 
 const SingleNews = ({ article }) => {
   return (
-    <article className="article">
+    <article className="searchable-article">
       {article.multimedia.length !== 0 ? (
         <img
           src={`https://static01.nyt.com/${article.multimedia[1].url}`}
@@ -17,25 +17,29 @@ const SingleNews = ({ article }) => {
       <h2 className="article__header">{article.headline.main}</h2>
       <p>{article.abstract}</p>
       <p>{article.lead_paragraph}</p>
-      <ul className="article__list">
+      <ul className="searchable-article__list">
         <li>
-          <span className="list__span">By: </span>
+          <span className="searchable-article__list__span">By: </span>
           {article.byline.original}
         </li>
         <li>
-          <span className="list__span">News Desk: </span>
+          <span className="searchable-article__list__span">News Desk: </span>
           {article.news_desk}
         </li>
         <li>
-          <span className="list__span">Section Name: </span>
+          <span className="searchable-article__list__span">Section Name: </span>
           {article.section_name}
         </li>
         <li>
-          <span className="list__span">Word Count: </span>
+          <span className="searchable-article__list__span">Word Count: </span>
           {article.word_count}
         </li>
       </ul>
-      <a href={article.web_url} target="_blank" className="list__link">
+      <a
+        href={article.web_url}
+        target="_blank"
+        className="searchable-article__list__link"
+      >
         Web resource
       </a>
     </article>
