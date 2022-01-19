@@ -63,7 +63,7 @@ const App = () => {
             }}
           />
           <h1 className="main-articles__intro">
-            Viewing top stories about {section}
+            Netlify test Viewing top stories about {section}
           </h1>
 
           {isLoading ? ( // if is not loading render this section
