@@ -1,3 +1,20 @@
+.main-articles__list {
+  flex: 4;
+  /* border: 2px solid red; */
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 20px;
+}
+.main-article {
+  margin-bottom: 30px;
+}
+.main-article h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+/**/
+
 .main-article {
   flex-basis: 370px;
   border: 1px solid #eee;

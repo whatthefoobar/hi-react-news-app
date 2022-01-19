@@ -1,6 +1,7 @@
 import React from "react";
 import SearchForm from "../SearchForm/SearchForm";
 import SingleNews from "../SingleNews/SingleNews";
+import "./SearchableNews.css";
 
 function SearchableNews({ articles }) {
   return (

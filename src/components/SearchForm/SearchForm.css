@@ -1,0 +1,20 @@
+.searchForm {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+/*Search Form*/
+.form__input {
+  padding: 0.25rem 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.form__button {
+  padding: 0.25rem 0.5rem;
+  /* background-color: rgba(52, 211, 153); */
+  background-color: rgb(16, 163, 109);
+  color: white;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+}

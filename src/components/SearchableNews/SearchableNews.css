@@ -1,0 +1,6 @@
+.searchable-articles__section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  padding: 2.5rem 1.25rem 5rem 1.25rem;
+  gap: 1rem;
+}
