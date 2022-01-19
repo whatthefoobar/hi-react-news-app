@@ -14,7 +14,7 @@ const SingleNews = ({ article }) => {
             src={`https://static01.nyt.com/${article.multimedia[1].url}`}
             alt="news"
           />
-          <a href="">{article.section_name}</a>
+          <button>{article.section_name}</button>
         </div>
       ) : null}
 
@@ -39,6 +39,7 @@ const SingleNews = ({ article }) => {
       <a
         href={article.web_url}
         target="_blank"
+        rel="noreferrer"
         className="searchable-article__list__link"
       >
         Full article

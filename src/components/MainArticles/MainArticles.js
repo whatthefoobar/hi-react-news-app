@@ -23,7 +23,12 @@ const MainArticles = ({ topArticles }) => {
               <p>{topArticle.abstract}</p>
               <p>{topArticle.byline}</p>
               {topArticle.url ? (
-                <a href={topArticle.url} target="_blank" className="list__link">
+                <a
+                  href={topArticle.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="list__link"
+                >
                   Full article
                 </a>
               ) : null}
