@@ -1,16 +1,21 @@
 import React from "react";
+import "./SingleNews.css";
 
 // https://api.nytimes.com/svc/search/v2/articlesearch.json?q=election&api-key=LucXp4UZ3Uv9BUyOVQjiCM6Xy6j6TLaC
 //for img urls put https://static01.nyt.com/ in front of url
 
 const SingleNews = ({ article }) => {
+  console.log(article);
   return (
     <article className="searchable-article">
       {article.multimedia.length !== 0 ? (
-        <img
-          src={`https://static01.nyt.com/${article.multimedia[1].url}`}
-          alt="news"
-        />
+        <div className="searchable-article__img">
+          <img
+            src={`https://static01.nyt.com/${article.multimedia[1].url}`}
+            alt="news"
+          />
+          <a href="">{article.section_name}</a>
+        </div>
       ) : null}
 
       {/* why img url has issues on search? */}
@@ -30,17 +35,13 @@ const SingleNews = ({ article }) => {
           <span className="searchable-article__list__span">Section Name: </span>
           {article.section_name}
         </li>
-        <li>
-          <span className="searchable-article__list__span">Word Count: </span>
-          {article.word_count}
-        </li>
       </ul>
       <a
         href={article.web_url}
         target="_blank"
         className="searchable-article__list__link"
       >
-        Web resource
+        Full article
       </a>
     </article>
   );

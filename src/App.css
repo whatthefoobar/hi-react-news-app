@@ -112,6 +112,7 @@ body {
 }
 .searchable-articles__intro {
   margin-top: 20px;
+  margin-bottom: 30px;
   font-weight: 600;
   font-size: 1.5rem;
   line-height: 2rem;
@@ -124,23 +125,6 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   padding: 2.5rem 1.25rem 5rem 1.25rem;
   gap: 1rem;
-}
-.searchable-article {
-  padding: 2.5rem 1.25rem;
-  background-color: white;
-  border-radius: 0.5rem;
-}
-.searchable-article__list {
-  margin: 1rem 0;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-.searchable-article__list__span {
-  font-weight: 700;
-}
-.searchable-article__list__link {
-  text-decoration: underline;
 }
 
 /* @media (min-width: 1024px) {

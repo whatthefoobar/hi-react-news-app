@@ -14,7 +14,7 @@ const MainArticles = ({ topArticles }) => {
                   src={topArticle.multimedia[0].url}
                   alt="top news article"
                 />
-                <a href="">{topArticle.section}</a>
+                {/* <a href="">{topArticle.section}</a> */}
               </div>
             ) : null}
 
@@ -24,26 +24,11 @@ const MainArticles = ({ topArticles }) => {
               <p>{topArticle.byline}</p>
               {topArticle.url ? (
                 <a href={topArticle.url} target="_blank" className="list__link">
-                  read more
+                  Full article
                 </a>
               ) : null}
             </div>
           </div>
-          // <article className="main-article" key={topArticle.uri}>
-          //   {topArticle.multimedia ? (
-          //     <img src={topArticle.multimedia[0].url} alt="top news article" />
-          //   ) : null}
-          //   {/* <img src={topArticle.multimedia[0].url} alt="top news article" /> */}
-          //   <h2>{topArticle.title}</h2>
-          //   <p>{topArticle.abstract}</p>
-          //   <p>{topArticle.byline}</p>
-
-          //   {topArticle.url ? (
-          //     <a href={topArticle.url} target="_blank" className="list__link">
-          //       read more
-          //     </a>
-          //   ) : null}
-          // </article>
         );
       })}
     </section>

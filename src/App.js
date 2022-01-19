@@ -66,7 +66,11 @@ const App = () => {
             Viewing top stories about {section}
           </h1>
 
-          <MainArticles topArticles={topArticles} />
+          {isLoading ? ( // if is not loading render this section
+            <h1 className="loading"> Loading...</h1>
+          ) : (
+            <MainArticles topArticles={topArticles} />
+          )}
         </div>
         <section className="searchable-articles">
           <SearchForm
