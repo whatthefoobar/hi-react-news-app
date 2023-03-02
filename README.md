@@ -10,3 +10,5 @@ Struggles:
 -understanding controlled inputs and keeping track of my props.
 -fixing my app when it crashed , as I later found out because some of the data fields were left empty in my API response, I fixed issue with some terneray conditionals.
 
+Next on the menu: redesign UI to add more sections and categories, add pagination to main content , sidesection with categories, individual news page, and footer.
+
