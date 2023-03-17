@@ -9,16 +9,18 @@ import OptionSearchForm from "./components/OptionSearchForm/OptionSearchForm";
 
 const App = () => {
   const [articles, setArticles] = useState([]);
-  const [term, setTerm] = useState("everything");
-  const [isLoading, setIsLoading] = useState("true");
-  const [section, setSection] = useState("books");
+  const [term, setTerm] = useState<string>("everything");
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [section, setSection] = useState<string>("books");
   const [topArticles, setTopArticles] = useState([]);
 
   useEffect(() => {
     const fetchArticles = async () => {
       try {
         const res = await fetch(
-          `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${term}&api-key=${process.env.REACT_APP_NEWS_API_KEY}`
+          `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${term}&api-key=${
+            import.meta.env.VITE_REACT_APP_NEWS_API_KEY
+          }`
         );
         const data = await res.json();
         const articles = data.response.docs;
@@ -36,11 +38,13 @@ const App = () => {
     const fetchTopArticles = async () => {
       try {
         const res = await fetch(
-          `https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${process.env.REACT_APP_NEWS_API_KEY}`
+          `https://api.nytimes.com/svc/topstories/v2/${section}.json?api-key=${
+            import.meta.env.VITE_REACT_APP_NEWS_API_KEY
+          }`
         );
         const data = await res.json();
         const topArticles = data.results;
-        console.log(topArticles);
+        // console.log(topArticles);
         setTopArticles(topArticles);
         setIsLoading(false);
       } catch (error) {
@@ -53,7 +57,6 @@ const App = () => {
   return (
     <>
       <Header />
-
       <div className="articles__container">
         <div className="main-articles__container">
           <OptionSearchForm
@@ -63,7 +66,7 @@ const App = () => {
             }}
           />
           <h1 className="main-articles__intro">
-            Netlify test Viewing top stories about {section}
+            Viewing top stories about {section}
           </h1>
 
           {isLoading ? ( // if is not loading render this section

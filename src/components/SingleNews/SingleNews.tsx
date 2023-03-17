@@ -5,7 +5,7 @@ import "./SingleNews.css";
 //for img urls put https://static01.nyt.com/ in front of url
 
 const SingleNews = ({ article }) => {
-  console.log(article);
+  // console.log(article);
   return (
     <article className="searchable-article">
       {article.multimedia.length !== 0 ? (
