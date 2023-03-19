@@ -12,3 +12,6 @@ Struggles:
 
 Next on the menu: redesign UI to add more sections and categories, add pagination to main content , sidesection with categories, individual news page, and footer.
 
+![1](https://user-images.githubusercontent.com/69626975/226189548-ca55cc7f-51ba-4037-9957-f9f5a9040838.png)
+
+
