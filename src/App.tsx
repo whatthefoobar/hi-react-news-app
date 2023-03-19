@@ -6,6 +6,7 @@ import Footer from "./components/Footer/Footer";
 import MainArticles from "./components/MainArticles/MainArticles";
 import Header from "./components/Header/Header";
 import OptionSearchForm from "./components/OptionSearchForm/OptionSearchForm";
+import AllArticles from "./components/AllArticles/AllArticles";
 // interface IArticle {
 //   abstract: string;
 //   byLine: {
@@ -38,11 +39,12 @@ import OptionSearchForm from "./components/OptionSearchForm/OptionSearchForm";
 // }
 
 const App = () => {
-  const [articles, setArticles] = useState([]);
   const [term, setTerm] = useState<string>("everything");
-  const [isLoading, setIsLoading] = useState<boolean>(true);
   const [section, setSection] = useState<string>("books");
+
+  const [articles, setArticles] = useState([]);
   const [topArticles, setTopArticles] = useState([]);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
   useEffect(() => {
     const fetchArticles = async () => {
@@ -87,48 +89,15 @@ const App = () => {
   return (
     <>
       <Header />
-      <div className="articles__container">
-        <div className="main-articles__container">
-          <OptionSearchForm
-            className="main-articles__search"
-            searchText={(text: string) => {
-              setSection(text); // prop function we declared here that we export to SearchForm
-            }}
-          />
-          <h1 className="main-articles__intro">
-            Viewing top stories about {section}
-          </h1>
-
-          {isLoading ? ( // if is not loading render this section
-            <h1 className="loading"> Loading...</h1>
-          ) : (
-            <MainArticles topArticles={topArticles} />
-          )}
-        </div>
-        <section className="searchable-articles">
-          <SearchForm
-            className="searchable-articles__search"
-            searchText={(text: string) => {
-              setTerm(text); // prop function we declared here that we export to SearchForm
-            }}
-          />
-          <h1 className="searchable-articles__intro">
-            Viewing articles about {term}
-          </h1>
-
-          {isLoading ? ( // if is not loading render this section
-            <h1 className="loading"> Loading...</h1>
-          ) : (
-            <SearchableNews
-              articles={articles}
-              searchText={(text) => {
-                setTerm(text); // prop function we declared here that we export to SearchForm
-              }}
-            />
-          )}
-        </section>
-      </div>
-
+      <AllArticles
+        articles={articles}
+        topArticles={topArticles}
+        term={term}
+        setTerm={setTerm}
+        section={section}
+        setSection={setSection}
+        isLoading={isLoading}
+      />
       <Footer />
     </>
   );

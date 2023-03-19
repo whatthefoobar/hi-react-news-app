@@ -1,4 +1,3 @@
-import React from "react";
 import "./MainArticles.css";
 
 const MainArticles = ({ topArticles }) => {

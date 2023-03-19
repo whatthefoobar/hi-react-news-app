@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import "./SearchForm.css";
 
 const SearchForm = ({ searchText }) => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState<string>("");
+
   const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
     searchText(text);
   };
 
   return (
-    <form className="searchForm" onSubmit={(e) => handleSubmit}>
+    <form className="searchForm" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="e.g. politics"

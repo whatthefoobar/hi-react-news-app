@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./OptionSearchForm.css";
 
 const OptionSearchForm = ({ searchText }) => {
-  const [text, setText] = useState("books");
-  const handleSubmit = (e) => {
+  const [text, setText] = useState<string>("books");
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     searchText(text);
   };
@@ -14,7 +14,7 @@ const OptionSearchForm = ({ searchText }) => {
       <select
         className="form__input sections"
         name="sections"
-        onChange={(e) => {
+        onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
           setText(e.target.value);
         }}
       >
