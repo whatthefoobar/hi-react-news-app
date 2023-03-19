@@ -3,14 +3,14 @@ import "./MainArticles.css";
 const MainArticles = ({ topArticles }) => {
   return (
     <section className="main-articles__list">
-      {topArticles.slice(0, 10).map((topArticle) => {
-        // console.log(topArticle);
+      {topArticles.slice(0, 15).map((topArticle) => {
+        console.log(topArticle);
         return (
           <div className="main-article" key={topArticle.uri}>
             {topArticle.multimedia ? (
               <div className="main-article__img">
                 <img
-                  src={topArticle.multimedia[0].url}
+                  src={topArticle.multimedia[1].url}
                   alt="top news article"
                 />
                 {/* <a href="">{topArticle.section}</a> */}

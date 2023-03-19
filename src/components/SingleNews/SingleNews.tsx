@@ -12,7 +12,7 @@ const SingleNews = ({ article }) => {
       {article.multimedia.length !== 0 ? (
         <div className="searchable-article__img">
           <img
-            src={`https://static01.nyt.com/${article.multimedia[1].url}`}
+            src={`https://static01.nyt.com/${article.multimedia[4].url}`}
             alt="news"
           />
           <button>{article.section_name}</button>

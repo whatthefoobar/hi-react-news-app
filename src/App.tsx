@@ -1,11 +1,7 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
-import SearchableNews from "./components/SearchableNews/SearchableNews";
-import SearchForm from "./components/SearchForm/SearchForm";
+import { useState, useEffect } from "react";
 import Footer from "./components/Footer/Footer";
-import MainArticles from "./components/MainArticles/MainArticles";
 import Header from "./components/Header/Header";
-import OptionSearchForm from "./components/OptionSearchForm/OptionSearchForm";
 import AllArticles from "./components/AllArticles/AllArticles";
 // interface IArticle {
 //   abstract: string;
