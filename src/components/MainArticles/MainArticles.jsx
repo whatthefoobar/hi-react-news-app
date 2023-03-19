@@ -4,7 +4,6 @@ const MainArticles = ({ topArticles }) => {
   return (
     <section className="main-articles__list">
       {topArticles.slice(0, 15).map((topArticle) => {
-        console.log(topArticle);
         return (
           <div className="main-article" key={topArticle.uri}>
             {topArticle.multimedia ? (

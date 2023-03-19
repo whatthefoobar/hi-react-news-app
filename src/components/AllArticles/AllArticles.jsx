@@ -18,7 +18,7 @@ const AllArticles = ({
       <div className="main-articles__container">
         <OptionSearchForm
           className="main-articles__search"
-          searchText={(text: string) => {
+          searchText={(text) => {
             setSection(text); // prop function we declared here that we export to SearchForm
           }}
         />
@@ -35,7 +35,7 @@ const AllArticles = ({
       <section className="searchable-articles">
         <SearchForm
           className="searchable-articles__search"
-          searchText={(text: string) => {
+          searchText={(text) => {
             setTerm(text); // prop function we declared here that we export to SearchForm
           }}
         />
@@ -48,7 +48,7 @@ const AllArticles = ({
         ) : (
           <SearchableNews
             articles={articles}
-            searchText={(text: string) => {
+            searchText={(text) => {
               setTerm(text); // prop function we declared here that we export to SearchForm
             }}
           />

@@ -3,44 +3,14 @@ import { useState, useEffect } from "react";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import AllArticles from "./components/AllArticles/AllArticles";
-// interface IArticle {
-//   abstract: string;
-//   byLine: {
-//     organization: null;
-//     original: string;
-//     person: [
-//       {
-//         firstname: string;
-//         lastname: string;
-//         middlename: null | string;
-//         organization: string;
-//         qualifier: null | string;
-//         rank: number;
-//         role: string;
-//         title: null | string;
-//       }
-//     ];
-//     document_type: string;
-//   };
-//   document_type: string;
-//   headline: {
-//     content_kicker: null;
-//     kicker: null;
-//     main: string;
-//     name: null;
-//     print_headline: string;
-//     seo: null;
-//     sub: null;
-//   };
-// }
 
 const App = () => {
-  const [term, setTerm] = useState<string>("everything");
-  const [section, setSection] = useState<string>("books");
+  const [term, setTerm] = useState("everything");
+  const [section, setSection] = useState("books");
 
   const [articles, setArticles] = useState([]);
   const [topArticles, setTopArticles] = useState([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchArticles = async () => {
