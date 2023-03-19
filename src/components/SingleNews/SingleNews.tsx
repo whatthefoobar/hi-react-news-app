@@ -6,6 +6,7 @@ import "./SingleNews.css";
 
 const SingleNews = ({ article }) => {
   // console.log(article);
+
   return (
     <article className="searchable-article">
       {article.multimedia.length !== 0 ? (
@@ -21,7 +22,7 @@ const SingleNews = ({ article }) => {
       {/* why img url has issues on search? */}
       <h2 className="article__header">{article.headline.main}</h2>
       <p>{article.abstract}</p>
-      <p>{article.lead_paragraph}</p>
+      {/* <p>{article.lead_paragraph}</p> */}
       <ul className="searchable-article__list">
         <li>
           <span className="searchable-article__list__span">By: </span>

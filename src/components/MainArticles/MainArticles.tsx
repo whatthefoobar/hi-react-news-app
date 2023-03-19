@@ -4,7 +4,7 @@ import "./MainArticles.css";
 const MainArticles = ({ topArticles }) => {
   return (
     <section className="main-articles__list">
-      {topArticles.map((topArticle) => {
+      {topArticles.slice(0, 10).map((topArticle) => {
         // console.log(topArticle);
         return (
           <div className="main-article" key={topArticle.uri}>

@@ -6,6 +6,36 @@ import Footer from "./components/Footer/Footer";
 import MainArticles from "./components/MainArticles/MainArticles";
 import Header from "./components/Header/Header";
 import OptionSearchForm from "./components/OptionSearchForm/OptionSearchForm";
+// interface IArticle {
+//   abstract: string;
+//   byLine: {
+//     organization: null;
+//     original: string;
+//     person: [
+//       {
+//         firstname: string;
+//         lastname: string;
+//         middlename: null | string;
+//         organization: string;
+//         qualifier: null | string;
+//         rank: number;
+//         role: string;
+//         title: null | string;
+//       }
+//     ];
+//     document_type: string;
+//   };
+//   document_type: string;
+//   headline: {
+//     content_kicker: null;
+//     kicker: null;
+//     main: string;
+//     name: null;
+//     print_headline: string;
+//     seo: null;
+//     sub: null;
+//   };
+// }
 
 const App = () => {
   const [articles, setArticles] = useState([]);
@@ -61,7 +91,7 @@ const App = () => {
         <div className="main-articles__container">
           <OptionSearchForm
             className="main-articles__search"
-            searchText={(text) => {
+            searchText={(text: string) => {
               setSection(text); // prop function we declared here that we export to SearchForm
             }}
           />
@@ -78,7 +108,7 @@ const App = () => {
         <section className="searchable-articles">
           <SearchForm
             className="searchable-articles__search"
-            searchText={(text) => {
+            searchText={(text: string) => {
               setTerm(text); // prop function we declared here that we export to SearchForm
             }}
           />

@@ -18,6 +18,7 @@
 .main-article {
   flex-basis: 370px;
   border: 1px solid #eee;
+  /* border: 2px solid red; */
 }
 .main-article__img {
   position: relative;

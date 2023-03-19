@@ -6,7 +6,7 @@ function SearchableNews({ articles }) {
   return (
     <div className="searchable-articles__container">
       <section className="articles__section content">
-        {articles.map((article) => {
+        {articles.slice(0, 5).map((article) => {
           return <SingleNews key={article._id} article={article} />;
         })}
       </section>

@@ -3,18 +3,18 @@ import "./SearchForm.css";
 
 const SearchForm = ({ searchText }) => {
   const [text, setText] = useState("");
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault();
     searchText(text);
   };
 
   return (
-    <form className="searchForm" onSubmit={handleSubmit}>
+    <form className="searchForm" onSubmit={(e) => handleSubmit}>
       <input
         type="text"
         placeholder="e.g. politics"
         className="form__input"
-        onChange={(e) => {
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
           setText(e.target.value);
         }}
       />
