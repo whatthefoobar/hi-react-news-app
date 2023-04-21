@@ -3,13 +3,14 @@ import SearchForm from "../SearchForm/SearchForm";
 import SearchableNews from "../SearchableNews/SearchableNews";
 
 const RightSectionNews = ({ term, setTerm, isLoading, articles }) => {
+  const changeSearchTerm = (text) => {
+    setTerm(text);
+  };
   return (
     <section className="searchable-articles">
       <SearchForm
         className="searchable-articles__search"
-        searchText={(text) => {
-          setTerm(text); // prop function we declared here that we export to SearchForm
-        }}
+        searchText={changeSearchTerm}
       />
       <h1 className="searchable-articles__intro">
         Viewing articles about {term}
