@@ -1,6 +1,7 @@
 .searchable-article {
-  padding: 2.5rem 1.25rem;
-  background-color: white;
+  /* padding: 2.5rem 1.25rem; */
+  /* background-color: white; */
+
   border-radius: 0.5rem;
 }
 .searchable-article__list {
@@ -45,7 +46,7 @@
   position: relative;
 }
 
-.searchable-article__img button {
+/* .searchable-article__img button {
   position: absolute;
   left: 0;
   top: 0;
@@ -54,10 +55,9 @@
   text-transform: capitalize;
   font-size: 18px;
   font-weight: 600;
-  /* background-color: #a77615; */
   background-color: #cf8f0f;
   padding: 7px 14px;
-}
+} */
 .article__header {
   margin: 10px 0;
   font-weight: 700;

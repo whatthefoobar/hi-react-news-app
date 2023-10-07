@@ -7,7 +7,7 @@ import "./SingleNews.css";
 const SingleNews = ({ article }) => {
   return (
     <article className="searchable-article">
-      {article.multimedia.length !== 0 ? (
+      {/* {article.multimedia.length !== 0 ? (
         <div className="searchable-article__img">
           <img
             src={`https://static01.nyt.com/${article.multimedia[4].url}`}
@@ -15,7 +15,7 @@ const SingleNews = ({ article }) => {
           />
           <button>{article.section_name}</button>
         </div>
-      ) : null}
+      ) : null} */}
 
       {/* why img url has issues on search? */}
       <h2 className="article__header">{article.headline.main}</h2>

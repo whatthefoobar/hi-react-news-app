@@ -1,10 +1,9 @@
 import "./App.css";
 import { useState, useEffect } from "react";
-import Footer from "./components/Footer/Footer";
-import Header from "./components/Header/Header";
 
 import LeftSectionNews from "./components/LeftSectionNews/LeftSectionNews";
 import RightSectionNews from "./components/RightSectionNews/RightSectionNews";
+import Layout from "./components/Layout/Layout";
 
 const App = () => {
   const [term, setTerm] = useState("everything");
@@ -55,8 +54,7 @@ const App = () => {
   }, [section]);
 
   return (
-    <>
-      <Header />
+    <Layout>
       <div className="articles__container">
         <LeftSectionNews
           section={section}
@@ -71,8 +69,7 @@ const App = () => {
           isLoading={isLoading}
         />
       </div>
-      <Footer />
-    </>
+    </Layout>
   );
 };
 
