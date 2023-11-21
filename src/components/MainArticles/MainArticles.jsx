@@ -3,7 +3,7 @@ import "./MainArticles.css";
 import Pagination from "../Pagination/Pagination";
 
 const MainArticles = ({ topArticles }) => {
-  const itemsPerPage = 6; // Number of items per page
+  const itemsPerPage = 3; // Number of items per page
   const [currentPage, setCurrentPage] = useState(1);
 
   const indexOfLastItem = currentPage * itemsPerPage;

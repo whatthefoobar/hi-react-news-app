@@ -7,11 +7,11 @@
 .header__img {
   background: url("https://images.pexels.com/photos/3953481/pexels-photo-3953481.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260")
     no-repeat center/cover;
-  height: 400px;
+  height: 200px;
 }
 .overlay {
   background-color: rgba(0, 0, 0, 0.4);
-  height: 400px;
+  height: 200px;
   padding: 0 20px;
   display: flex;
   flex-direction: column;

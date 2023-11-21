@@ -4,7 +4,7 @@ import "./SearchableNews.css";
 import Pagination from "../Pagination/Pagination";
 
 function SearchableNews({ articles }) {
-  const itemsPerPage = 4; // Number of items per page
+  const itemsPerPage = 2; // Number of items per page
   const [currentPage, setCurrentPage] = useState(1);
 
   const indexOfLastItem = currentPage * itemsPerPage;
