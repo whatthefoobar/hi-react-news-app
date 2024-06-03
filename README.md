@@ -1,4 +1,8 @@
 # hi-react-news-app
+TODO:
+- add active button class in pagination to reflect page number
+- add skeleton loading for cards
+  
 React news app project using New York Times Api
 Hiperisland school project Mission : use react and create an application using a public API
 
